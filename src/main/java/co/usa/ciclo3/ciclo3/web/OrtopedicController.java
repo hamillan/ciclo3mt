@@ -50,6 +50,6 @@ public class OrtopedicController {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean deleteOrtopedic(@PathVariable("id") int id){
-        return ortopedicService.deleteCategory(id);
+        return ortopedicService.deleteOrtopedic(id);
     }
 }

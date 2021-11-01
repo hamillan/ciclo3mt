@@ -36,6 +36,9 @@ public class CategoriaService {
         if(c.getId()!=null){
             Optional<Categoria>g=categoriaRepository.getCategoria(c.getId());
             if(!g.isEmpty()){
+                if(c.getDescription()!=null){
+                    g.get().setDescription(c.getDescription());
+                }
                 if(c.getName()!=null){
                     g.get().setName(c.getName());
                 }
@@ -45,7 +48,6 @@ public class CategoriaService {
         return c;
 
     }
-   //FORMA 1;
     public boolean deleteCategory(int id){
         Boolean d= getCategoria(id).map(category -> {
             categoriaRepository.delete(category);
@@ -53,7 +55,6 @@ public class CategoriaService {
         }).orElse(false);
         return d;
     }
-    //FORMA 2
     public boolean deleteCategory2(int id){
         Optional<Categoria> c=getCategoria(id);
         if(!c.isEmpty()){

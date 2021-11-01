@@ -42,6 +42,14 @@ public class OrtopedicService {
                 if(c.getName()!=null){
                     g.get().setName(c.getName());
                 }
+                if(c.getBrand()!=null){
+                    g.get().setBrand(c.getBrand());
+                }
+
+                if(c.getYear()!=null){
+                    g.get().setYear(c.getYear());
+                }
+
                 if(c.getDescription()!=null){
                     g.get().setDescription(c.getDescription());
                 }
@@ -52,7 +60,7 @@ public class OrtopedicService {
 
     }
 
-    public boolean deleteCategory(int id){
+    public boolean deleteOrtopedic(int id){
         Optional<Ortopedic> c=getOrtopedic(id);
         if(!c.isEmpty()){
             ortopedicRepository.delete(c.get());
