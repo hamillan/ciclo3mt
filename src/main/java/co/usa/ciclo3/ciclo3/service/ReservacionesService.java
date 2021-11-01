@@ -7,20 +7,28 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+/**
+ *
+ * @author Hugo Millan
+ */
 
 @Service
 public class ReservacionesService {
     @Autowired
+    /** CRUD para las Reservaciones - Definición global */
     private ReservacionesRepository metodosCrud;
 
+    /** instancia de las Reservaciones */
     public List<Reservaciones> getAll(){
         return metodosCrud.getAll();
     }
 
+    /** GET de las Reservaciones */
     public Optional<Reservaciones> getReservation(int reservationId) {
         return metodosCrud.getReservaciones(reservationId);
     }
 
+    /** POST de las Reservaciones */
     public Reservaciones save(Reservaciones reservation){
         if(reservation.getIdReservation()==null){
             return metodosCrud.save(reservation);
@@ -34,6 +42,7 @@ public class ReservacionesService {
         }
     }
 
+    /** PUT de las Reservaciones */
     public Reservaciones update(Reservaciones reservation){
         if(reservation.getIdReservation()!=null){
             Optional<Reservaciones> e= metodosCrud.getReservaciones(reservation.getIdReservation());
@@ -58,6 +67,7 @@ public class ReservacionesService {
         }
     }
 
+    /** DELETE de las Reservaciones */
     public boolean deleteReservation(int reservationId) {
         Boolean aBoolean = getReservation(reservationId).map(reservation -> {
             metodosCrud.delete(reservation);

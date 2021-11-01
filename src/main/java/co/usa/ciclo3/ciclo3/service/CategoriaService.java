@@ -55,12 +55,4 @@ public class CategoriaService {
         }).orElse(false);
         return d;
     }
-    public boolean deleteCategory2(int id){
-        Optional<Categoria> c=getCategoria(id);
-        if(!c.isEmpty()){
-            categoriaRepository.delete(c.get());
-            return true;
-        }
-        return false;
-    }
 }
