@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>        
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <base href="/"/>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/estilos.css"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <script type="text/javascript" src="js/consultar_protesis.js"></script>
+        <script type="text/javascript" src="js/registrar_protesis.js"></script>
+        <script type="text/javascript" src="js/borrar_protesis.js"></script>
+        <script type="text/javascript" src="js/actualizar_protesis.js"></script>
+        <title>Estado de Prótesis</title>
+    </head>
+    <body style="background-color:#7f93e2;">
+        </br>
+        <div class="container">
+            <h1 style="text-align:center; color:whitesmoke">#MisionTIC 2022 - Ciclo 3 - Hugo Millán</h1>
+            <hr style="height:2px;border-width:0;color:gray;background-color:white">
+            <h3 style="text-align:center; color:whitesmoke">ESTADO DE LAS PRÓTESIS</h3>
+            <hr style="height:2px;border-width:0;color:gray;background-color:whitesmoke">
+            <h4>Prótesis Registradas</h4>
+            <button class="btn btn-warning id="boton_consultar_protesis" onclick="consultar_protesis()">Consultar Datos / Refrescar</button>
+            <a href="index.html" class="btn btn-info" role="button">Ir al Inicio</a>              
+            <div id="tabla_protesis"></div>    
+            <h4>*Registrar Nuevas Prótesis</h4>
+            Nombre <input type="text" id="prot_name" /> <br/>
+            Marca <input type="text" id="prot_brand" /> <br/>
+            Año <input type="number" id="prot_year" /> <br/>
+            Descripción <input type="text" id="prot_description" /> <br/>        
+            </br>
+        <button class="btn btn-warning id="boton_registrar_protesis" onclick="registrar_protesis()">Registrar Prótesis</button>
+    </div>
+</html>

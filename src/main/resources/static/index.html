@@ -2,48 +2,118 @@
 <html lang="es">
     <head>
         <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <title>Demo Login</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>        
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
         <base href="/"/>
         <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
         <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/estilos.css"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <title>Estado de Prótesis</title>
     </head>
-    <body>
-        <h1>#MisionTIC 2022 - Hugo Millán</h1>
-        <div class="container unauthenticated">
-            Para iniciar sesión con Github:
-            <a href="/oauth2/authorization/github">haz click</a>
-        </div>
-        <div class="container authenticated" style="display:none">
-            Autenticado como: <span id="user"></span>
-            <p>
-                <a href="privado.html">Ir a la pagina privada</a>
-            </p>
-            <div>
-                <button onClick="logout()" class="btn btn-primary">Logout</button>
+    <body style="background-color:#7f93e2;">
+        </br>
+        <h1 style="text-align:center; color:whitesmoke">#MisionTIC 2022 - Ciclo 3 - Hugo Millán</h1>
+        <hr style="height:2px;border-width:0;color:gray;background-color:white">
+        </br>
+        <div class="container">
+        <h3>Reserva de Prótesis</h3>        
+        <div class="row">
+            <!-- 1. Sección Prótesis -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="card-box bg-red">
+                    <div class="inner">
+                        <h3>1. Prótesis</h3>
+                        <p>Consulta de Prótesis</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-crutch" aria-hidden="true"></i>
+                    </div>
+                    <a href="protesis.html" class="card-box-footer">Ver Estado<i class="fa fa-arrow-circle-right"></i></a>
+                </div>
             </div>
+            <!-- 2. Sección Categorías -->           
+            <div class="col-lg-3 col-sm-6">
+                <div class="card-box bg-primary">
+                    <div class="inner">
+                        <h3>2. Categoría</h3>
+                        <p>Consulta de Categorías</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-notes-medical" aria-hidden="true"></i>
+                    </div>
+                    <a href="categorias.html" class="card-box-footer">Ver Estado <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- 3. Sección Clientes -->   
+            <div class="col-lg-3 col-sm-6">
+                <div class="card-box bg-success">
+                    <div class="inner">
+                        <h3>3. Clientes</h3>
+                        <p>Información de Clientes</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-address-card" aria-hidden="true"></i>
+                    </div>
+                    <a href="cliente.html" class="card-box-footer">Ver Estado <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- 4. Sección Mensaejs -->   
+            <div class="col-lg-3 col-sm-6">
+                <div class="card-box bg-blue">
+                    <div class="inner">
+                        <h3>4. Mensajes</h3>
+                        <p>Servicio de Mensajes</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </div>
+                    <a href="mensaje.html" class="card-box-footer">Ver Estado <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- 5. Sección Reservas -->   
+            <div class="col-lg-3 col-sm-6">
+                <div class="card-box bg-orange">
+                    <div class="inner">
+                        <h3>5. Reservas</h3>
+                        <p>Información de Reservas</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <a href="reservas.html" class="card-box-footer">Ver Estado <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- 6. Sección Reportes -->   
+            <div class="col-lg-3 col-sm-6">
+                <div class="card-box bg-danger">
+                    <div class="inner">
+                        <h3>6. Reportes </h3>
+                        <p> Informes de Ventas </p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-list"></i>
+                    </div>
+                    <a href="reporte.html" class="card-box-footer">Ver Estado <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- 7. Sección Admins -->   
+            <div class="col-lg-3 col-sm-6">
+                <div class="card-box bg-warning">
+                    <div class="inner">
+                        <h3>7. Administradores</h3>
+                        <p>Pagina Administradores</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                    <a href="administrador.html" class="card-box-footer">Ver Estado <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
         </div>
-    </body>
-    <script type="text/javascript">
-        $.get("/user", function (data) {
-            console.log("get");
-            console.log(data);
-            $("#user").html(data.name);
-            $(".unauthenticated").hide();
-            $(".authenticated").show();
-        });
-
-
-        var logout = function () {
-            $.post("/logout", function () {
-                $("#user").html('');
-                $(".unauthenticated").show();
-                $(".authenticated").hide();
-            })
-            return true;
-        }
-    </script>
+    </div>
+        
 </html>
